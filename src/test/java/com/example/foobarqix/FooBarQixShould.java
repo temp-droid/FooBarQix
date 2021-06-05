@@ -67,13 +67,13 @@ public class FooBarQixShould {
     }
 
     @Test
-    void return_Bar_when_input_is_10() {
+    void return_Bar_asterisk_when_input_is_10() {
         // given
         String input = "10";
         // when
         String result = FooBarQix.compute(input);
         // then
-        assertThat(result).isEqualTo("Bar");
+        assertThat(result).isEqualTo("Bar*");
     }
 
     @Test
@@ -134,5 +134,45 @@ public class FooBarQixShould {
         String result = FooBarQix.compute(input);
         // then
         assertThat(result).isEqualTo("BarFoo");
+    }
+
+    @Test
+    void return_1_asterisk_1_when_input_is_101() {
+        // given
+        String input = "101";
+        // when
+        String result = FooBarQix.compute(input);
+        // then
+        assertThat(result).isEqualTo("1*1");
+    }
+
+    @Test
+    void return_FooFoo_asterisk_Foo_when_input_is_303() {
+        // given
+        String input = "303";
+        // when
+        String result = FooBarQix.compute(input);
+        // then
+        assertThat(result).isEqualTo("FooFoo*Foo");
+    }
+
+    @Test
+    void return_FooBarQix_asterisk_Bar_when_input_is_303() {
+        // given
+        String input = "105";
+        // when
+        String result = FooBarQix.compute(input);
+        // then
+        assertThat(result).isEqualTo("FooBarQix*Bar");
+    }
+
+    @Test
+    void return_FooQix_asterisk_asterisk_when_input_is_10101() {
+        // given
+        String input = "10101";
+        // when
+        String result = FooBarQix.compute(input);
+        // then
+        assertThat(result).isEqualTo("FooQix**");
     }
 }
